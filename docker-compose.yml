@@ -1,0 +1,13 @@
+version: "0.1"
+
+services:
+  bitcoind-testnet:
+    container_name: bitcoind-testnet
+    build: .
+    ports:
+      - 18332:18332
+    working_dir: /
+    volumes:
+     - ./btcdata:/root/.bitcoin
+     - ./bitcoin.conf:/root/.bitcoin/bitcoin.conf
+    command: sh -c "/usr/local/bin/bitcoind -testnet -rest=1 -server=1 -printtoconsole -txindex=1"
