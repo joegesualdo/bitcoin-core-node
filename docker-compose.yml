@@ -2,8 +2,9 @@ version: "0.1"
 
 services:
   bitcoind-testnet:
+    build: https://github.com/joegesualdo/bitcoin-core-dockerfile.git#main
     container_name: bitcoind-testnet
-    build: .
+    image: bitcoind-testnet
     ports:
       - 18332:18332
       - 18333:18333
