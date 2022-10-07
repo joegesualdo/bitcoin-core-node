@@ -6,6 +6,7 @@ services:
     build: .
     ports:
       - 18332:18332
+      - 18333:18333
     working_dir: /
     volumes:
      - ./btcdata:/root/.bitcoin
