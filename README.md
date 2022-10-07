@@ -7,6 +7,9 @@
 
 ---
 
+*Currently, this is only configured for testnet. Other networks coming soon...*
+
+
 ## Run
 > Run bitcoin core and make RPC port accessible 
 ```
