@@ -1,0 +1,16 @@
+version: "0.1"
+
+services:
+  bitcoind:
+    build: https://github.com/joegesualdo/bitcoin-core-dockerfile.git#main
+    container_name: bitcoind
+    image: bitcoind
+    ports:
+      - 8332:8332
+      - 8333:8333
+    working_dir: /
+    volumes:
+     - ./btcdata:/root/.bitcoin
+     - ./bitcoin.mainnet.conf:/root/.bitcoin/bitcoin.conf
+    command: sh -c "/usr/local/bin/bitcoind -rest=1 -server=1 -printtoconsole -txindex=1"
+

@@ -1,7 +1,7 @@
 version: "0.1"
 
 services:
-  bitcoind-testnet:
+  bitcoind:
     build: https://github.com/joegesualdo/bitcoin-core-dockerfile.git#main
     container_name: bitcoind-testnet
     image: bitcoind-testnet
@@ -11,5 +11,6 @@ services:
     working_dir: /
     volumes:
      - ./btcdata:/root/.bitcoin
-     - ./bitcoin.conf:/root/.bitcoin/bitcoin.conf
+     - ./bitcoin.testnet.conf:/root/.bitcoin/bitcoin.conf
     command: sh -c "/usr/local/bin/bitcoind -testnet -rest=1 -server=1 -printtoconsole -txindex=1"
+

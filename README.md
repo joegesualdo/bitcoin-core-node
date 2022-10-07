@@ -7,23 +7,32 @@
 
 ---
 
-*Currently, this is only configured for testnet. Other networks coming soon...*
-
-
 ## Run
-> Run bitcoin core and make RPC port accessible 
+> Run bitcoin core mainnet and make RPC port accessible 
 ```
-$ docker-compose up
+$ docker-compose -f docker-compose.mainnet.yml up
+```
+> Run bitcoin core mainnet and make RPC port accessible 
+```
+$ docker-compose -f docker-compose.testnet.yml up
 ```
 
 ## Usage:
 ### Requesting blockchain information
 > Use bitcoin-cli on your local machine to request information from the node running in the docker container
+For testnet:
 ```
 $ bitcoin-cli -testnet -rpcuser=user -rpcpassword=password getblockchaininfo
 ```
+For mainnet:
+```
+$ bitcoin-cli -rpcuser=user -rpcpassword=password getblockchaininfo
+```
 ### SSH into the container
 ```
+// ssh into mainnet server
+docker exec -it bitcoind /bin/bash
+// ssh into testnet server
 docker exec -it bitcoind-testnet /bin/bash
 ```
 
