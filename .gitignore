@@ -1,1 +1,2 @@
-btcdata
+btcdata/*
+!btcdata/.gitkeep
